@@ -1,0 +1,405 @@
+$light-orange: #e3fc8b;
+$dark-orange: #5cd1de;
+$orange: #f3ff4d;
+$brown-orange: #68c5c4;
+$light-gray: #8de9dd;
+
+.app {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 1024px;
+
+    .link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    // LOGIN & REGISTER
+    .auth {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: $light-orange;
+
+      h1 {
+        font-size: 50px;
+        color: $light-gray;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        padding: 90px;
+        background-color: rgb(161, 202, 236);
+        border-radius: 4px;
+        width: 200px;
+        gap: 20px;
+
+        input {
+          padding: 24px;
+          border: none;
+          border-bottom: 1px solid gray;
+        }
+
+        button {
+          padding: 10px;
+          border: none;
+          background-color: $dark-orange;
+          border-radius: 4px;
+          color: rgb(241, 30, 30);
+          cursor: pointer;
+        }
+
+        p {
+          font-size: 12px;
+          color: rgb(119, 121, 234);
+          text-align: center;
+        }
+
+        span {
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    }
+
+    // NAVBAR
+    .navbar {
+      .container {
+        padding: 10px 0px;
+        display: flex;
+        align-items: left;
+        justify-content: space-between;
+
+
+        .links {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          & > *:not(:last-child):hover {
+            border-bottom: 1px solid $light-orange;
+          }
+        }
+
+        h6 {
+          font-size: 20px;
+          font-weight: 300;
+        }
+
+        span {
+          cursor: pointer;
+        }
+
+        .write {
+          background-color: $light-orange;
+          width: 200px;
+          height: 100px;
+          border-radius: 10%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 500;
+          border: 20px solid rgb(234, 98, 98); // to prevent items move when hover because the extra pixel of the border when hover
+
+          &:hover {
+            color: $brown-orange;
+            background-color: rgb(240, 185, 185);
+            border: 5px solid $dark-orange;
+          }
+        }
+      }
+    }
+
+    // FOOTER
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      margin-top: 200px;
+      border-top: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    footer span {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #999;
+    }
+
+    footer img {
+      max-width: 75px;
+      margin-bottom: 10px;
+    }
+
+    // HOME
+    .home {
+      .posts {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 150px;
+
+        .post {
+          display: flex;
+          gap: 100px;
+
+          &:nth-child(2n + 1) {
+            flex-direction: row-reverse;
+          }
+
+          .post-img {
+            flex: 2;
+            position: relative;
+
+            &::after {
+              content: "";
+              width: 100%;
+              height: 100%;
+              background-color: $light-orange;
+              position: absolute;
+              top: 20px;
+              left: -20px;
+              z-index: -1;
+            }
+
+            img {
+              width: 100%;
+              max-height: 400px;
+              object-fit: cover;
+            }
+          }
+
+          .content {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h1 {
+              font-size: 48px;
+            }
+
+            p {
+              margin-top: 20px;
+              font-size: 18px;
+            }
+
+            button {
+              width: max-content;
+              font-size: 16px;
+              margin-top: 40px;
+              padding: 10px 20px;
+              border: none;
+              cursor: pointer;
+              background-color: white;
+              border: 1px solid $dark-orange;
+              color: $dark-orange;
+
+              &:hover {
+                border: 1px solid white;
+                background-color: $light-orange;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // SINGLE
+    .single {
+      display: flex;
+      gap: 50px;
+
+      .content {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        img {
+          width: 100%;
+          height: 100px;
+          object-fit: cover;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 14px;
+
+          
+        }
+
+        span {
+          font-weight: bold;
+        }
+
+        .edit {
+          display: flex;
+          gap: 5px;
+
+          img {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+          }
+        }
+
+        h1 {
+          font-size: 52px;
+          color: #333;
+        }
+
+        p {
+          text-align: justify;
+          line-height: 30px;
+        }
+      }
+
+      .menu {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+        h1 {
+          font-size: 20px;
+          color: #555;
+        }
+
+        .post {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+          }
+
+          h2 {
+            color: #460505;
+          }
+
+          button {
+            width: max-content;
+            padding: 7.5px 15px;
+            border: none;
+            cursor: pointer;
+            background-color: white;
+            border: 1px solid $dark-orange;
+            color: $dark-orange;
+
+            &:hover {
+              border: 1px solid white;
+              background-color: $light-orange;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    // WRITE
+    .add {
+      margin-top: 30px;
+      display: flex;
+      gap: 30px;
+
+      .content {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        input {
+          padding: 20px;
+          border: 5px solid rgb(39, 1, 1);
+        }
+
+        .editor-container {
+          height: 500px;
+          overflow: scroll;
+          border: 5px solid rgb(100, 13, 13);
+
+          .editor {
+            height: 100%;
+            border: none;
+          }
+        }
+      }
+
+      .menu {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .item {
+        padding: 10px;
+        border: 5px solid rgb(6, 69, 98);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 19px;
+        color: #f00707;
+
+        h1 {
+          font-size: 20px;
+        }
+
+        .file {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        .buttons {
+          display: flex;
+          justify-content: space-between;
+
+          :first-child {
+            cursor: pointer;
+            color: $dark-orange;
+            background-color: white;
+            border: 1px solid $dark-orange;
+            padding: 3px 5px;
+
+            &:hover {
+              background-color: $dark-orange;
+              color: white;
+              border: 1px solid white;
+            }
+          }
+
+          :last-child {
+            cursor: pointer;
+            color: white;
+            background-color: $dark-orange;
+            border: 1px solid white;
+            padding: 3px 5px;
+          }
+        }
+
+        .category {
+          display: flex;
+          align-items: left;
+          gap: 20px;
+          color: $dark-orange;
+        }
+      }
+    }
+  }
+}

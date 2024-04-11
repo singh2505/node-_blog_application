@@ -1,0 +1,22 @@
+{
+  "name": "algo8_assignment-1",
+  "version": "1.0.0",
+  "description": "![plot](README_images/home.png)",
+  "main": "index.js",
+  "scripts": {
+    "start:both": "concurrently \"npm start --prefix api\" \"npm start --prefix client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^3.9.4"
+  },
+  "devDependencies": {
+    "chai": "^5.1.0",
+    "chai-http": "^4.4.0",
+    "mocha": "^10.4.0"
+  }
+  
+  
+}
